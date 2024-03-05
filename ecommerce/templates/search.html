@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container" style="margin-bottom:100px;">
+<center>
+   <h5>You Have Searched For {{query}}</h5>
+    {% if p %}
+    <div class="container-fluid mt-5" style="margin-bottom:100px;">
+    <div class="row">
+        {% for i in p %}
+        <div class="col-sm-3 me-5 mb-5" style="margin:40px; margin-bottom:20px;">
+            <div class="card " style="width: 18rem;">
+  <img src="{{i.image.url}}" height="200px;" width="90%" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title text-center">{{i.name}}</h5>
+      <h5 class="card-title text-center">{{i.price}}</h5>
+
+    <a href="{% url 'shop:detail' i.name %}"   style="position:relative;left:3%;" class="btn btn-dark">Details</a>
+  </div>
+</div>
+        </div>{% endfor %}
+    </div>
+    {% else %}
+    <h6 class="text-center">No Results Found</h6></div>
+    {% endif %}
+</center>
+</div>
+{% endblock %}

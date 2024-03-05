@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container-fluid mt-4">
+    <img src="{% static 'images/img_1.png' %}" height="350px" width="100%">
+</div>
+<div class="container-fluid mt-3" style="margin-bottom:100px;">
+    <h3 class="text-center fw-bold">Our Collections</h3>
+    <p style="text-align:justify;line-height:2">When you visit the MY SHOP website, you’ll immediately feel like you’re visiting an old friend. This is a company using their site to enforce their brand in all the best ways—from the three colors that make up the color scheme throughout the site to the copy on everything that makes it clear what the products are and what the company stands for, like being cruelty-free and planet-friendly. </p>
+</div>
+<div class="container-fluid mt-3" style="margin-bottom:100px;">
+    <div class="row">
+        {% for i in c %}
+        <div class="col-sm-4" >
+            <div class="card " style="width: 18rem;">
+  <img src="{{i.image.url}}" height="200px;" width="90%" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title text-center">{{i.name}}</h5>
+
+    <a href="{% url 'shop:allproducts' i.name %}" style="position:relative;left:33%;" class="btn btn-dark">products</a>
+  </div>
+</div>
+        </div>{% endfor %}
+    </div>
+</div>
+
+
+{% endblock %}

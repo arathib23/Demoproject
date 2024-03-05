@@ -1,0 +1,37 @@
+
+
+body{
+  font-family: "Noto Serif", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings:
+    "width" 100;
+    background-color:#aaa0ad
+}
+.footer
+{
+height:40px;
+width:100%;
+text-align:center;
+background-color:#705e75;
+position:fixed;
+font-color:white;
+bottom:0;
+left:0;
+}
+.navbar-dark .navbar-nav .nav-link{
+color:black;
+font-weight:bold;
+}
+.navbar{
+background-color:#705e75;
+}
+.navbar-brand
+{
+text-weight:bold;
+}
+.form control
+{
+width:50px;
+}
